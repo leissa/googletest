@@ -28,7 +28,7 @@ matrix:
     - os: linux
       group: deprecated-2017Q4
       compiler: gcc
-      env: BUILD_TYPE=Debug VERBOSE=1 CXX_FLAGS=-std=c++11
+      env: BUILD_TYPE=Debug VERBOSE=1 CXX_FLAGS="-Wall -Wextra -Werror -std=c++11"
     - os: linux
       group: deprecated-2017Q4
       compiler: clang
@@ -36,14 +36,14 @@ matrix:
     - os: linux
       group: deprecated-2017Q4
       compiler: clang
-      env: BUILD_TYPE=Release VERBOSE=1 CXX_FLAGS=-std=c++11
+      env: BUILD_TYPE=Release VERBOSE=1 CXX_FLAGS="-Wall -Wextra -Werror -std=c++11"
     - os: osx
       compiler: gcc
       env: BUILD_TYPE=Debug VERBOSE=1
       if: type != pull_request
     - os: osx
       compiler: gcc
-      env: BUILD_TYPE=Release VERBOSE=1 CXX_FLAGS=-std=c++11
+      env: BUILD_TYPE=Release VERBOSE=1 CXX_FLAGS="-Wall -Wextra -Werror -std=c++11"
       if: type != pull_request
     - os: osx
       compiler: clang
@@ -51,7 +51,7 @@ matrix:
       if: type != pull_request
     - os: osx
       compiler: clang
-      env: BUILD_TYPE=Release VERBOSE=1 CXX_FLAGS=-std=c++11
+      env: BUILD_TYPE=Release VERBOSE=1 CXX_FLAGS="-Wall -Wextra -Werror -std=c++11"
       if: type != pull_request
 
 # These are the install and build (script) phases for the most common entries in the matrix.  They could be included
